@@ -1,13 +1,27 @@
+<?php
+
+$title = "Vaughn Development and Administration";
+$landing_message = "Hey, We're Vaughn";
+$landing_description = "We develop <span class='light-green'>websites</span>/<span class='light-green'>applications</span>, 
+						and administor 
+						<span class='light-green'>Linux</span> and 
+						<span class='light-green'>Windows</span> Systems. <br /> 
+						Need to contact us? Message our github.";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Vaughn Development and Administration</title>
+	<title><?php echo $title; ?></title>
 
 	<!-- Load fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 
 	<!-- Load css styles -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -40,10 +54,8 @@
 		</nav>
 		<div class="container">
 			<div class="header-info">
-				<h1>Hey, We're Vaughn</h1>
-				<p>We develop websites, applications, and administor Linux and Windows Systems. <br />
-					Need to contact us? Message our github.
-				</p>
+				<h1 class="landing-header"><?php echo $landing_message; ?></h1>
+				<p class="landing-description"><?php echo $landing_description; ?></p>
 				<a href="http://github.com/JacksonBrown" class="btn btn-primary" target="_blank">Our Github</a>
 			</div>
 		</div>
@@ -135,7 +147,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-8">
-					<form class="row" name="contact-form" method="post" action="email_send.php">
+					<form class="row" name="contact-form" method="post" action="">
 						<div class="form-group col-md-6">
 							<input name="name" type="text" placeholder="Your Name" class="form-control" />
 						</div>
@@ -172,6 +184,10 @@
 					<address>
 						<span>Phone</span>
 						<p>+00 918-931-7486</p>
+					</address>
+					<address>
+						<span>Skype</span>
+						<p>realtalk1217</p>
 					</address>
 				</div>
 			</div>
