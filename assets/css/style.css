@@ -139,7 +139,7 @@ a:focus{
 .jumbotron{
 	text-align: center;
 	position: relative;
-	background: url('../img/background.jpg');
+	background: url('../img/main-bg.jpg');
 	background-size: cover;
 	color: #fff;
 }

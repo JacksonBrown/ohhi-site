@@ -14,7 +14,6 @@ $ouraddress = " 106 Tommye Ln<br>
 				Tahlequah, OK 74464<br>
 				United States";
 
-
 ?>
 
 <!DOCTYPE html>
@@ -152,7 +151,7 @@ $ouraddress = " 106 Tommye Ln<br>
 			-->
 			<div class="row">
 				<div class="col-md-8">
-					<form class="row" name="contact-form" method="post" action="">
+					<form class="row" name="contact-form" action="<?php echo base_url('sendmail'); ?>" method="post" action="">
 						<div class="form-group col-md-6">
 							<input name="name" type="text" placeholder="Your Name" class="form-control" />
 						</div>
@@ -166,7 +165,7 @@ $ouraddress = " 106 Tommye Ln<br>
 							<textarea name="message" class="form-control" rows="10" placeholder="Message"></textarea>
 						</div>
 						<div class="form-group col-md-12">
-							<input type="submit" value="Send" style="text-transform: lowercase;" class="btn btn-lg btn-primary">
+							<input type="submit" value="Send" name="submit" style="text-transform: lowercase;" class="btn btn-lg btn-primary">
 						</div>
 					</form>
 				</div>
