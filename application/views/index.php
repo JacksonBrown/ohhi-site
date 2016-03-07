@@ -6,7 +6,14 @@ $landing_description = "We develop <span class='light-green'>websites</span>/<sp
 						and administor 
 						<span class='light-green'>Linux</span> and 
 						<span class='light-green'>Windows</span> Systems. <br /> 
-						Need to contact us? Message our github.";
+						Need to contact us? Send us an email.";
+$skype = "realtalk1217";
+$phone = "+00 918-931-7486";
+$ouremail = "jacksonconnerbrown@gmail.com";
+$ouraddress = " 106 Tommye Ln<br>
+				Tahlequah, OK 74464<br>
+				United States";
+
 
 ?>
 
@@ -32,11 +39,6 @@ $landing_description = "We develop <span class='light-green'>websites</span>/<sp
 <body>
 	<div class="jumbotron home home-fullscreen" id="home">
 		<div class="mask"></div>
-		<!--
-		<a href="#" class="logo">
-			<i class="fa fa-cloud logo-font" style="color: #fff;"></i>
-		</a>
-		-->
 		<a href="" class="menu-toggle" id="nav-expander" style="position: fixed;"><i class="fa fa-bars"></i></a>
 		<!-- Offsite navigation -->
 		<nav class="menu">
@@ -56,12 +58,12 @@ $landing_description = "We develop <span class='light-green'>websites</span>/<sp
 			<div class="header-info">
 				<h1 class="landing-header"><?php echo $landing_message; ?></h1>
 				<p class="landing-description"><?php echo $landing_description; ?></p>
-				<a href="http://github.com/JacksonBrown" class="btn btn-primary" target="_blank">Our Github</a>
+				<a href="#contact" data-scroll class="btn btn-primary" target="_blank">We Don't Bite</a>
 			</div>
 		</div>
 	</div>
 	<!-- Services section start -->
-	<section id="services">
+	<section id="services" style="background-color: #efefef;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
@@ -87,7 +89,7 @@ $landing_description = "We develop <span class='light-green'>websites</span>/<sp
 				<div class="col-md-4">
 					<div class="service-item">
 						<div class="icon"><i class="fa fa-life-ring"></i></div>
-						<h3>We Love To Help</h3>
+						<h3>We Aid In Projects</h3>
 						<p>
 						We love to aid in projects. We're proficient in web development and python development. We also administor
 						Linux systems and Windows systems.
@@ -98,7 +100,8 @@ $landing_description = "We develop <span class='light-green'>websites</span>/<sp
 		</div>
 	</section>
 	<!-- Services section end -->
-	<!-- Portfolio section start 
+	<!-- Portfolio section start -->
+	<!--
 	<section id="portfolio" class="darker">
 		<div class="container">
 			<header>
@@ -139,12 +142,14 @@ $landing_description = "We develop <span class='light-green'>websites</span>/<sp
 				Send us an email, we'll reply immediately!
 				</p>
 			</header>
+			<!--
 			<div class="map-wrapper">
 				<div class="map-canvas" id="map-canvas">106 Tommye Ln Tahlequah Oklahoma</div>
 				<div class="marker">
 					<span>We Are Here</span>
 				</div>
 			</div>
+			-->
 			<div class="row">
 				<div class="col-md-8">
 					<form class="row" name="contact-form" method="post" action="">
@@ -161,33 +166,26 @@ $landing_description = "We develop <span class='light-green'>websites</span>/<sp
 							<textarea name="message" class="form-control" rows="10" placeholder="Message"></textarea>
 						</div>
 						<div class="form-group col-md-12">
-							<!--
-							<button class="btn btn-lg btn-primary">Send</button>
-							-->
-							<input type="submit" value="Send" class="btn btn-lg btn-primary">
+							<input type="submit" value="Send" style="text-transform: lowercase;" class="btn btn-lg btn-primary">
 						</div>
 					</form>
 				</div>
 				<div class="col-md-3 col-md-offset-1">
 					<address>
 						<span>Our Address</span>
-						<p>
-							106 Tommye Ln<br>
-							Tahlequah, OK 74464<br>
-							United States
-						</p>
+						<p><?php echo $ouraddress; ?></p>
 					</address>
 					<address>
 						<span>Email</span>
-						<p>jacksonconnerbrown@gmail.com</p>
+						<p><?php echo $ouremail; ?></p>
 					</address>
 					<address>
 						<span>Phone</span>
-						<p>+00 918-931-7486</p>
+						<p><?php echo $phone; ?></p>
 					</address>
 					<address>
 						<span>Skype</span>
-						<p>realtalk1217</p>
+						<p><?php echo $skype; ?></p>
 					</address>
 				</div>
 			</div>
