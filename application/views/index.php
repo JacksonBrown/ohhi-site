@@ -207,7 +207,7 @@ if(isset($_POST['submit'])){
 	</section>
 	<!-- Contact section end -->
 	<!-- Footer start -->
-	<footer>
+	<footer class="foot">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
