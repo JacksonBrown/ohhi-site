@@ -14,6 +14,21 @@ $ouraddress = " 106 Tommye Ln<br>
 				Tahlequah, OK 74464<br>
 				United States";
 
+if(isset($_POST['submit'])){
+    $to = "jacksonconnerbrown@gmail.com"; // this is your Email address
+    $from = $_POST['mail']; // this is the sender's Email address
+    $first_name = $_POST['name'];
+    $subject = "Form submission";
+    $subject2 = $_POST['subject'];
+    $message = $first_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -151,7 +166,7 @@ $ouraddress = " 106 Tommye Ln<br>
 			-->
 			<div class="row">
 				<div class="col-md-8">
-					<form class="row" name="contact-form" action="<?php echo base_url('sendmail'); ?>" method="post" action="">
+					<form class="row" name="contact-form" method="post" action="">
 						<div class="form-group col-md-6">
 							<input name="name" type="text" placeholder="Your Name" class="form-control" />
 						</div>
