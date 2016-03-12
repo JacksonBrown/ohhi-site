@@ -1,6 +1,7 @@
 body{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 15px;
+	background-color: #efefef;
 }
 
 p, input, textarea{
@@ -138,7 +139,7 @@ a:focus{
 .jumbotron{
 	text-align: center;
 	position: relative;
-	background: url('../img/background.jpg');
+	background: url('../img/main-bg.jpg');
 	background-size: cover;
 	color: #fff;
 }
@@ -385,7 +386,7 @@ form{
 
 footer{
 	padding: 75px 0;
-	background-color: #333;
+	background-color: #1E6EB3;
 	color: #fff;
 }
 
