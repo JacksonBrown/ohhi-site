@@ -1,7 +1,7 @@
 <?php
 
 $title = "I Do Development and Administration";
-$landing_message = "Hey, I'm Jackson";
+$landing_message = "Oh Hi, I'm Jackson";
 $landing_description = "I develop <span class='light-green'>websites</span>/<span class='light-green'>applications</span>, 
 						and administor 
 						<span class='light-green'>Linux</span> and 
