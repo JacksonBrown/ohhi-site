@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
 				<li><a data-scroll href="#contact">Contact</a></li>
 			</ul>
 			<ul class="social-icons">
-				<li><a href=""><i class="fa fa-twitter"></i></a></li>
+				<li><a href="http://twitter.com/iamdeliria"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="http://github.com/JacksonBrown/"><i class="fa fa-github"></i></a></li>
 			</ul>
 		</nav>
@@ -211,8 +211,8 @@ if(isset($_POST['submit'])){
 				</div>
 				<div class="col-md-4">
 					<ul class="social-icons">
-						<li><a href=""><i class="fa fa-twitter"></i></a></li>
-						<li><a href=""><i class="fa fa-github"></i></a></li>
+						<li><a href="http://twitter.com/iamdeliria"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="http://github.com/JacksonBrown"><i class="fa fa-github"></i></a></li>
 					</ul>
 				</div>
 			</div>
