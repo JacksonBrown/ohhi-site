@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
 	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 
 	<!-- Load css styles -->
-`	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.css'); ?>" />
 	<link rel="stylesheet" type="text/css" href="font-awesome.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>" />
 
