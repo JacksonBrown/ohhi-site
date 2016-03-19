@@ -1,292 +1,237 @@
 <?php
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014 - 2016, British Columbia Institute of Technology
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2016, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- * @since	Version 1.0.0
- * @filesource
- */
 
-/*
- *---------------------------------------------------------------
- * APPLICATION ENVIRONMENT
- *---------------------------------------------------------------
- *
- * You can load different configurations depending on your
- * current environment. Setting the environment also influences
- * things like logging and error reporting.
- *
- * This can be set to anything, but default usage is:
- *
- *     development
- *     testing
- *     production
- *
- * NOTE: If you change these, also change the error_reporting() code below
- */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+$title = "I Do Development and Administration";
+$landing_message = "Oh Hi, I'm Jackson";
+$landing_description = "I develop <span class='light-green'>websites</span>/<span class='light-green'>applications</span>, 
+						and administor 
+						<span class='light-green'>Linux</span> and 
+						<span class='light-green'>Windows</span> Systems. <br /> 
+						Need to contact me? Send an email!";
+$skype = "realtalk1217";
+$phone = "+00 918-931-7486";
+$ouremail = "jacksonconnerbrown@gmail.com";
+$ouraddress = " 106 Tommye Ln<br>
+				Tahlequah, OK 74464<br>
+				United States";
 
-/*
- *---------------------------------------------------------------
- * ERROR REPORTING
- *---------------------------------------------------------------
- *
- * Different environments will require different levels of error reporting.
- * By default development will show errors but testing and live will hide them.
- */
-switch (ENVIRONMENT)
-{
-	case 'development':
-		error_reporting(-1);
-		ini_set('display_errors', 1);
-	break;
+$to = "jacksonconnerbrown@gmail.com"; // this is your Email address
+$from = $_POST['mail']; // this is the sender's Email address
+$first_name = $_POST['name'];
+$subject = $_POST['subject'];
+$message = $first_name . " wrote the following:" . "\n\n" . $_POST['message'];
 
-	case 'testing':
-	case 'production':
-		ini_set('display_errors', 0);
-		if (version_compare(PHP_VERSION, '5.3', '>='))
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
-		}
-		else
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
-		}
-	break;
+$headers = "From:" . $from;
 
-	default:
-		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'The application environment is not set correctly.';
-		exit(1); // EXIT_ERROR
+if ($_POST){
+	mail($to,$subject,$message,$headers);
+	$showsuccess='Thank you for contacting!';
 }
+?>
 
-/*
- *---------------------------------------------------------------
- * SYSTEM FOLDER NAME
- *---------------------------------------------------------------
- *
- * This variable must contain the name of your "system" folder.
- * Include the path if the folder is not in the same directory
- * as this file.
- */
-	$system_path = 'system';
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><?php echo $title; ?></title>
 
-/*
- *---------------------------------------------------------------
- * APPLICATION FOLDER NAME
- *---------------------------------------------------------------
- *
- * If you want this front controller to use a different "application"
- * folder than the default one you can set its name here. The folder
- * can also be renamed or relocated anywhere on your server. If
- * you do, use a full server path. For more info please see the user guide:
- * https://codeigniter.com/user_guide/general/managing_apps.html
- *
- * NO TRAILING SLASH!
- */
-	$application_folder = 'application';
+	<!-- Load fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 
-/*
- *---------------------------------------------------------------
- * VIEW FOLDER NAME
- *---------------------------------------------------------------
- *
- * If you want to move the view folder out of the application
- * folder set the path to the folder here. The folder can be renamed
- * and relocated anywhere on your server. If blank, it will default
- * to the standard location inside your application folder. If you
- * do move this, use the full server path to this folder.
- *
- * NO TRAILING SLASH!
- */
-	$view_folder = '';
+	<!-- Load css styles -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+<body>
+	<div class="jumbotron home home-fullscreen" id="home">
+		<div class="mask"></div>
+		<a href="" class="menu-toggle" id="nav-expander" style="position: fixed;"><i class="fa fa-bars"></i></a>
+		<!-- Offsite navigation -->
+		<nav class="menu">
+			<a href="#" class="close"><i class="fa fa-close"></i></a>
+			<h3>Site Map</h3>
+			<ul class="nav">
+				<li><a data-scroll href="#home">Home</a></li>
+				<li><a data-scroll href="#services">About</a></li>
+				<li><a data-scroll href="#contact">Contact</a></li>
+			</ul>
+			<ul class="social-icons">
+				<li><a href="http://twitter.com/iamdeliria" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="http://github.com/JacksonBrown/" target="_blank"><i class="fa fa-github"></i></a></li>
+			</ul>
+		</nav>
+		<div class="container">
+			<div class="header-info">
+				<h1 class="landing-header"><?php echo $landing_message; ?></h1>
+				<p class="landing-description"><?php echo $landing_description; ?></p>
+				<a href="#contact" data-scroll class="btn btn-primary" target="_blank">I Don't Bite</a>
+				<p class="landing-description" style="padding-top: 5%;"><?php echo $showsuccess; ?></p>
+			</div>
+		</div>
+	</div>
+	<!-- Services section start -->
+	<section id="services" style="background-color: #efefef;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="service-item">
+						<div class="icon"><i class="fa fa-thumbs-up"></i></div>
+						<h3>I Administrate Linux Systems</h3>
+						<p>
+						I adminstrate Linux systems, ranging from user configuration and security, to partition schematics and software management.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service-item">
+						<div class="icon"><i class="fa fa-adjust"></i></div>
+						<h3>I Configrue Linux Servers</h3>
+						<p>
+						I configure Linux servers, doing tasks such as IP routing, interface configuration, and server set up and moderating (Apache2, Nginx, Email Servers, DNS Servers, etc).
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service-item">
+						<div class="icon"><i class="fa fa-life-ring"></i></div>
+						<h3>I Aid In Developments</h3>
+						<p>
+						I love to aid in projects. I'm proficient in back end and front end web development and python console/gui application and server development. 
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Services section end -->
+	<!-- Portfolio section start -->
+	<!--
+	<section id="portfolio" class="darker">
+		<div class="container">
+			<header>
+				<h2>Our Projects and Certifications</h2>
+				<p>
+				We've worked on web development and python development projects, along with obtaining certifications in Linux and A+.
+				</p>
+			</header>
+			<div id="single-project"></div>
+			<div class="row">
+				<figure class="portfolio-item col-md-4 col-sm-6" >
+					<img class="img-responsive" src="img/projects/project-thumbnail-1.png" alt="Adena icons pack" />
+					<figcaption class="mask">
+						<a href="projects/project-1.html">
+							<i class="glyphicon glyphicon-plus"></i>
+						</a>
+					</figcaption>
+				</figure>
+				<figure class="portfolio-item col-md-4 col-sm-6" >
+					<img class="img-responsive" src="img/projects/project-thumbnail-1.png" alt="Adena icons pack" />
+					<figcaption class="mask">
+						<a href="projects/project-1.html">
+							<i class="glyphicon glyphicon-plus"></i>
+						</a>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+	-->
+	<!-- Portfolio section end -->
+	<!-- Contact section start -->
+	<section id="contact">
+		<div class="container">
+			<header>
+				<h2>Contact Me</h2>
+				<p>
+				Send me an email, I'll reply immediately!
+				</p>
+			</header>
+			<!--
+			<div class="map-wrapper">
+				<div class="map-canvas" id="map-canvas">106 Tommye Ln Tahlequah Oklahoma</div>
+				<div class="marker">
+					<span>We Are Here</span>
+				</div>
+			</div>
+			-->
+			<div class="row">
+				<div class="col-md-8">
+					<form class="row" name="contact-form" method="post" action="">
+						<div class="form-group col-md-6">
+							<input name="name" type="text" placeholder="Your Name" class="form-control" />
+						</div>
+						<div class="form-group col-md-6">
+							<input name="mail" type="email" placeholder="Your Email" class="form-control" />
+						</div>
+						<div class="form-group col-md-12">
+							<input name="subject" type="text" placeholder="Subject" class="form-control" />
+						</div>
+						<div class="form-group col-md-12">
+							<textarea name="message" class="form-control" rows="10" placeholder="Message"></textarea>
+						</div>
+						<div class="form-group col-md-12">
+							<input type="submit" value="Send" name="submit" style="text-transform: lowercase;" class="btn btn-lg btn-primary">
+						</div>
+					</form>
 
 
-/*
- * --------------------------------------------------------------------
- * DEFAULT CONTROLLER
- * --------------------------------------------------------------------
- *
- * Normally you will set your default controller in the routes.php file.
- * You can, however, force a custom routing by hard-coding a
- * specific controller class/function here. For most applications, you
- * WILL NOT set your routing here, but it's an option for those
- * special instances where you might want to override the standard
- * routing in a specific front controller that shares a common CI installation.
- *
- * IMPORTANT: If you set the routing here, NO OTHER controller will be
- * callable. In essence, this preference limits your application to ONE
- * specific controller. Leave the function name blank if you need
- * to call functions dynamically via the URI.
- *
- * Un-comment the $routing array below to use this feature
- */
-	// The directory name, relative to the "controllers" folder.  Leave blank
-	// if your controller is not in a sub-folder within the "controllers" folder
-	// $routing['directory'] = '';
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<address>
+						<span>Address</span>
+						<p><?php echo $ouraddress; ?></p>
+					</address>
+					<address>
+						<span>Email</span>
+						<p><?php echo $ouremail; ?></p>
+					</address>
+					<address>
+						<span>Phone</span>
+						<p><?php echo $phone; ?></p>
+					</address>
+					<address>
+						<span>Skype</span>
+						<p><?php echo $skype; ?></p>
+					</address>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact section end -->
+	<!-- Footer start -->
+	<footer class="foot">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<p>&copy; Jackson Brown 2016</p>
+				</div>
+				<div class="col-md-4">
+					<ul class="social-icons">
+						<li><a href="http://twitter.com/iamdeliria" target="_blank"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="http://github.com/JacksonBrown" target="_blank"><i class="fa fa-github"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer end  -->
 
-	// The controller class file name.  Example:  mycontroller
-	// $routing['controller'] = '';
+	<!-- Load jQuery -->
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 
-	// The controller function you wish to be called.
-	// $routing['function']	= '';
+	<!-- Load Booststrap -->
+	<script type="text/javascript" src="js/bootstrap.js>"></script>
 
+	<script type="text/javascript" src="js/smooth-scroll.js"></script>
 
-/*
- * -------------------------------------------------------------------
- *  CUSTOM CONFIG VALUES
- * -------------------------------------------------------------------
- *
- * The $assign_to_config array below will be passed dynamically to the
- * config class when initialized. This allows you to set custom config
- * items or override any default config values found in the config.php file.
- * This can be handy as it permits you to share one application between
- * multiple front controller files, with each file containing different
- * config values.
- *
- * Un-comment the $assign_to_config array below to use this feature
- */
-	// $assign_to_config['name_of_config_item'] = 'value of config item';
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-
-
-// --------------------------------------------------------------------
-// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
-// --------------------------------------------------------------------
-
-/*
- * ---------------------------------------------------------------
- *  Resolve the system path for increased reliability
- * ---------------------------------------------------------------
- */
-
-	// Set the current directory correctly for CLI requests
-	if (defined('STDIN'))
-	{
-		chdir(dirname(__FILE__));
-	}
-
-	if (($_temp = realpath($system_path)) !== FALSE)
-	{
-		$system_path = $_temp.'/';
-	}
-	else
-	{
-		// Ensure there's a trailing slash
-		$system_path = rtrim($system_path, '/').'/';
-	}
-
-	// Is the system path correct?
-	if ( ! is_dir($system_path))
-	{
-		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '.pathinfo(__FILE__, PATHINFO_BASENAME);
-		exit(3); // EXIT_CONFIG
-	}
-
-/*
- * -------------------------------------------------------------------
- *  Now that we know the path, set the main path constants
- * -------------------------------------------------------------------
- */
-	// The name of THIS file
-	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
-
-	// Path to the system folder
-	define('BASEPATH', str_replace('\\', '/', $system_path));
-
-	// Path to the front controller (this file)
-	define('FCPATH', dirname(__FILE__).'/');
-
-	// Name of the "system folder"
-	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
-
-	// The path to the "application" folder
-	if (is_dir($application_folder))
-	{
-		if (($_temp = realpath($application_folder)) !== FALSE)
-		{
-			$application_folder = $_temp;
-		}
-
-		define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
-	}
-	else
-	{
-		if ( ! is_dir(BASEPATH.$application_folder.DIRECTORY_SEPARATOR))
-		{
-			header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-			echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
-			exit(3); // EXIT_CONFIG
-		}
-
-		define('APPPATH', BASEPATH.$application_folder.DIRECTORY_SEPARATOR);
-	}
-
-	// The path to the "views" folder
-	if ( ! is_dir($view_folder))
-	{
-		if ( ! empty($view_folder) && is_dir(APPPATH.$view_folder.DIRECTORY_SEPARATOR))
-		{
-			$view_folder = APPPATH.$view_folder;
-		}
-		elseif ( ! is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
-		{
-			header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-			echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
-			exit(3); // EXIT_CONFIG
-		}
-		else
-		{
-			$view_folder = APPPATH.'views';
-		}
-	}
-
-	if (($_temp = realpath($view_folder)) !== FALSE)
-	{
-		$view_folder = $_temp.DIRECTORY_SEPARATOR;
-	}
-	else
-	{
-		$view_folder = rtrim($view_folder, '/\\').DIRECTORY_SEPARATOR;
-	}
-
-	define('VIEWPATH', $view_folder);
-
-/*
- * --------------------------------------------------------------------
- * LOAD THE BOOTSTRAP FILE
- * --------------------------------------------------------------------
- *
- * And away we go...
- */
-require_once BASEPATH.'core/CodeIgniter.php';
+	<!-- Load custom js for theme -->
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
